@@ -24,7 +24,7 @@ android {
 
     lintOptions {
         quiet true
-        warningsAsErrors true
+        abortOnError false
         disable 'GradleDependency'
     }
 }
@@ -34,7 +34,7 @@ configurations.all {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:support-annotations:24.1.1'
-    compile project(':payload_reader')
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api 'com.android.support:support-annotations:28.0.0'
+    api project(':payload_reader')
 }
